@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/css": "^11.13.5",
     "pinia": "^3.0.2",
+    "primeicons": "^7.0.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {

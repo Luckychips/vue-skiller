@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { css } from '@emotion/css'
+import { css } from "@emotion/css";
 
 const props = defineProps<{
-  buttonText: string
-}>()
+  buttonText: string;
+}>();
 
 const emit = defineEmits<{
-  (e: 'increment', payload: number): void
-}>()
+  (e: "increment", payload: number): void;
+}>();
 
 function onClick() {
-  emit('increment', 1)
+  emit("increment", 1);
 }
 
 const buttonClass = css`
@@ -21,10 +21,11 @@ const buttonClass = css`
   border: none;
   cursor: pointer;
   font-size: 16px;
+  width: 100%;
   &:hover {
     background-color: #369870;
   }
-`
+`;
 </script>
 
 <template>
