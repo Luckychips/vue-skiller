@@ -5,7 +5,6 @@ import { useVoiceStore } from './features/voice/store/voiceStore';
 
 import SimpleButton from './components/core/SimpleButton.vue';
 import RecordView from './features/voice/views/voice.vue';
-import ResetButton from './components/core/ResetButton.vue';
 
 const count = ref(0);
 const recorder = useVoiceStore();
@@ -62,9 +61,11 @@ const checkAudioSettings = async () => {
     <p>Count: {{ count }}</p>
     <div :class="btnContainer">
       <SimpleButton
+        type="increment"
         button-text="click!!!!!"
         @increment="increment"
-      /><ResetButton @reset="resetCount" />
+      />
+      <SimpleButton type="reset" @reset="resetCount" />
     </div>
     <div :class="btnContainer">
       <RecordView /> <Button @click="checkAudioSettings()">마이크 사용</Button>
