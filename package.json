@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",
+    "@types/dom-speech-recognition": "^0.0.6",
     "pinia": "^3.0.2",
     "primeicons": "^7.0.0",
     "vue": "^3.5.13"
