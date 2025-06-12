@@ -23,12 +23,26 @@ function resetCount() {
 
 <template>
   <div class="container">
-    <SimpleButton type="increment" @increment="increment">
+    <SimpleButton
+      button-type="increment"
+      @increment="increment"
+      :style="{buttonPadding: '10px 20px'}"
+    >
       <template #text>
         <span>click!!</span>
       </template>
     </SimpleButton>
-    <SimpleButton type="reset" @reset="resetCount">
+    <SimpleButton
+      button-type="reset"
+      @reset="resetCount"
+      :style="{
+        buttonWidth: '40px',
+        buttonHeight: '40px',
+        buttonColor: 'white',
+        buttonTextColor: '#7d7d7d',
+        buttonHoveredColor: '#ededed',
+      }"
+    >
       <template #icon>
         <i class="pi pi-refresh" />
       </template>
