@@ -6,7 +6,9 @@ export const useVoiceStore = defineStore('voice', {
     browserSupport: false,
   }),
   getters: {
-    string: (state) => state.voice,
+    toIntVoice(state) {
+      return parseInt(state.voice);
+    },
   },
   actions: {
     record(voice: String) {
