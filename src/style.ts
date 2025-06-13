@@ -67,6 +67,12 @@ injectGlobal`
     padding: 2rem;
     text-align: center;
   }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
 
   @media (prefers-color-scheme: light) {
     :root {
