@@ -3,6 +3,7 @@ import { css } from '@emotion/css';
 import { useVoiceStore } from './features/voice/store/voiceStore';
 
 import Eventer from './components/container/Eventer.vue';
+import Checker from './components/api/Checker.vue';
 import RecordView from './features/voice/views/voice.vue';
 
 const recorder = useVoiceStore();
@@ -42,6 +43,7 @@ const checkAudioSettings = async () => {
   <div :class="containerClass">
     <h1>Counter</h1>
     <p>Count: {{ recorder.voice }}</p>
+    <Checker />
     <Eventer />
     <div class="container">
       <RecordView />

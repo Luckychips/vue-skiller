@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SimpleButton from '../core/button/SimpleButton.vue';
-import { useVoiceStore } from '../../features/voice/store/voiceStore';
+import SimpleButton from '@/components/core/button/SimpleButton.vue';
+import { useVoiceStore } from '@/features/voice/store/voiceStore';
 
 const recorder = useVoiceStore();
 
@@ -22,10 +22,10 @@ function resetCount() {
 </script>
 
 <template>
-  <div class="container">
+  <section class="container">
     <SimpleButton
-      button-type="increment"
-      @increment="increment"
+      has-on-click-parameter
+      :onClick="increment"
       :css="{padding: '10px 20px'}"
     >
       <template #text>
@@ -33,8 +33,7 @@ function resetCount() {
       </template>
     </SimpleButton>
     <SimpleButton
-      button-type="reset"
-      @reset="resetCount"
+      :onClick="resetCount"
       :css="{
         width: '40px',
         height: '40px',
@@ -47,5 +46,5 @@ function resetCount() {
         <i class="pi pi-refresh" />
       </template>
     </SimpleButton>
-  </div>
+  </section>
 </template>

@@ -5,12 +5,14 @@ import type { ButtonCssProps } from './base';
 import { buttonDefaultCss } from './base';
 
 type Definer = {
-  buttonType: 'increment' | 'reset',
   css?: ButtonCssProps,
+  onClick?: (payload?: any) => void,
+  hasOnClickParameter?: boolean,
 };
 
 const props = withDefaults(defineProps<Definer>(), {
   css: () => buttonDefaultCss,
+  hasOnClickParameter: false,
 });
 
 const merged = computed(() => ({  ...buttonDefaultCss, ...props.css }));
@@ -29,18 +31,13 @@ const dynamicStyle = computed(() => css`
   }
 `);
 
-const emit = defineEmits<{
-  (e: 'increment', payload: number): void;
-  (e: 'reset'): void;
-}>();
-
 function onClick() {
-  if (props.buttonType == 'reset') {
-    emit(props.buttonType);
-    return;
+  let payload = undefined;
+  if (props.hasOnClickParameter) {
+    payload = 1;
   }
 
-  emit(props.buttonType, 1);
+  props.onClick?.(payload);
 }
 </script>
 
@@ -48,8 +45,8 @@ function onClick() {
   <button
     :class="[
       dynamicStyle,
-      props.buttonType == 'reset' && alignCenterStyle,
-      props.buttonType == 'reset' && animatedStyle,
+      props.hasOnClickParameter ? {} : alignCenterStyle,
+      props.hasOnClickParameter ? {} : animatedStyle,
     ]"
     @click="onClick"
   >
