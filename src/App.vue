@@ -40,6 +40,7 @@ const checkAudioSettings = async () => {
 </script>
 
 <template>
+  <router-view />
   <div :class="containerClass">
     <h1>Counter</h1>
     <p>Count: {{ recorder.voice }}</p>
