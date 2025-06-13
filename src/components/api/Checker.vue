@@ -32,7 +32,7 @@ async function connect() {
       :css="{padding: '10px 20px'}"
     >
       <template #icon>
-        <i class="pi pi-spin pi-cog" />
+        <i class="pi pi-youtube" :class="{ 'pi-spin': isLoading }" />
       </template>
     </SimpleButton>
     <ul v-if="result && result.countries && result.countries.length > 0">
