@@ -9,7 +9,9 @@ export const useVoiceStore = defineStore('voice', {
     lang: 'ko-KR',
   }),
   getters: {
-    string: (state) => state.voice,
+    toIntVoice(state) {
+      return parseInt(state.voice);
+    },
   },
   actions: {
     record(voice: String) {
